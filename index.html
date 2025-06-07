@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Mariel</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+    
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff5f5 0%, #fff0f8 50%, #f5f0ff 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 4.5em;
+      color: #ff6b9e;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ff6b9e, #ff8e53);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: float 3s ease-in-out infinite;
+      position: relative;
+      z-index: 10;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #666;
+      max-width: 800px;
+      padding: 0 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .confetti {
+      position: fixed;
+      width: 12px;
+      height: 12px;
+      background-color: #ff6b9e;
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .confetti:nth-child(4n) {
+      background-color: #7fd8ff;
+    }
+    .confetti:nth-child(4n+1) {
+      background-color: #ffb86b;
+    }
+    .confetti:nth-child(4n+2) {
+      background-color: #a18dff;
+    }
+    .confetti:nth-child(4n+3) {
+      background-color: #6bff8e;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(720deg) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .flag-container {
+      margin-top: 30px;
+      position: relative;
+      z-index: 10;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .flag {
+      width: 150px;
+      height: auto;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+      transition: all 0.3s ease;
+    }
+
+    .flag:hover {
+      transform: scale(1.05);
+    }
+
+    .balloon {
+      position: absolute;
+      width: 60px;
+      height: 80px;
+      border-radius: 50%;
+      animation: balloonFloat 8s ease-in-out infinite;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    @keyframes balloonFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-100px) rotate(5deg);
+      }
+    }
+
+    .hearts {
+      position: absolute;
+      font-size: 20px;
+      color: #ff6b9e;
+      animation: heartFloat 6s linear infinite;
+      opacity: 0;
+      z-index: 0;
+    }
+
+    @keyframes heartFloat {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .flower {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 60px;
+      animation: sway 3s infinite ease-in-out;
+      z-index: 5;
+      transform-origin: bottom center;
+    }
+
+    @keyframes sway {
+      0%, 100% {
+        transform: rotate(-5deg);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+
+    .stars {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Happy Birthday, Mariel! 🌸</h1>
+  <p>
+    May your day be filled with joy, laughter, and all the things that make you happy. 
+    Wishing you a year ahead filled with happiness, success, and all your dreams coming true.
+  </p>
+
+  <div class="flag-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" alt="Philippine Flag" class="flag">
+  </div>
+
+  <div class="flower">🌸</div>
+
+  <script>
+    // Create confetti
+    const confettiCount = 150;
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.animationDuration = 3 + Math.random() * 4 + 's';
+      confetti.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(confetti);
+    }
+
+    // Create balloons
+    const balloonColors = ['#ff6b9e', '#7fd8ff', '#ffb86b', '#a18dff', '#6bff8e'];
+    for (let i = 0; i < 8; i++) {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.bottom = -100 + 'px';
+      balloon.style.animationDelay = Math.random() * 5 + 's';
+      balloon.style.backgroundColor = balloonColors[i % balloonColors.length];
+      document.body.appendChild(balloon);
+    }
+
+    // Create floating hearts
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('hearts');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.bottom = -20 + 'px';
+      heart.style.animationDelay = Math.random() * 8 + 's';
+      heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+      document.body.appendChild(heart);
+    }
+
+    // Create twinkling stars
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement('div');
+      star.classList.add('stars');
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.animationDelay = Math.random() * 2 + 's';
+      star.style.width = (1 + Math.random() * 3) + 'px';
+      star.style.height = star.style.width;
+      document.body.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
